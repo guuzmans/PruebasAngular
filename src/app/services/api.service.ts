@@ -18,7 +18,7 @@ export class ApiService {
   // Métodos para Artículos
   // ------------------------------
   mostrarArticuloPorId(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/Api/Articulos/MostrarArticulosPorID?id=${id}`);
+    return this.http.get(`${this.baseUrl}/Api/Articulos/MostrarArticulosPorID`);
   }
 
   buscarArticulo(query: string): Observable<any> {
