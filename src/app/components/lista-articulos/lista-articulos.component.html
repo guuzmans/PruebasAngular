@@ -1,0 +1,3 @@
+<div class="articulos-container" fxLayout="row wrap" fwLayoutAlign="center">
+  <app-articulo fxFlexOffset="5%" class="articulo-index" *ngFor="let articulo of articulos" [articulo]="articulo" (agregar)="Agregar()"></app-articulo>
+</div>

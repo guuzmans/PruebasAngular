@@ -4,9 +4,15 @@ import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ProductItemDetailComponent } from './components/product-item-detail/product-item-detail.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import {ArticuloComponent} from "./components/articulo/articulo.component";
+import {ListaArticulosComponent} from "./components/lista-articulos/lista-articulos.component";
+// import {DetalleArticuloComponent} from "./components/detalle-articulo/detalle-articulo.component";
 
 const routes: Routes = [
   {path: '', component: ProductListComponent},
+  {path: 'articulo', component: ArticuloComponent },
+  {path: 'lista-articulos', component: ListaArticulosComponent },
+  // {path: 'detalle-articulo', component: DetalleArticuloComponent },
   {path: 'cart', component: CartComponent},
   {path: 'success', component: ConfirmationComponent},
   {path: ':product', component: ProductItemDetailComponent}
