@@ -15,7 +15,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { ListaArticulosComponent } from './components/lista-articulos/lista-articulos.component';
-// import { DetalleArticuloComponent } from './components/detalle-articulo/detalle-articulo.component';
+import { DetalleArticuloComponent } from './components/detalle-articulo/detalle-articulo.component';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { ListaArticulosComponent } from './components/lista-articulos/lista-arti
     ConfirmationComponent,
     ArticuloComponent,
     ListaArticulosComponent,
-    // DetalleArticuloComponent,
+    DetalleArticuloComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,13 +17,14 @@ export class ArticuloComponent {
   constructor(private carritoService: CarritoService) {
     this.articulo = {
       iD_Articulo: 0,
-      iD_Categoria: 0,
-      iD_Color: 0,
-      iD_Talla: 0,
-      iD_Modelo: 0,
+      categoria: "",
+      color: "",
+      talla: "",
+      modelo: "",
       precio: 0.0,
       stock: 0,
-      cantidad: 0
+      cantidad: 0,
+      url_Imagen: ""
     }
   }
 

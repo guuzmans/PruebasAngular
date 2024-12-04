@@ -1,7 +1,7 @@
-/*import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Articulo} from "../../models/Articulo";
 import {ActivatedRoute} from "@angular/router";
-import { ArticuloService } from '../../services/articulo.service';
+import {ArticuloService} from '../../services/articulo.service';
 import {CarritoService} from "../../services/carrito.service";
 
 @Component({
@@ -11,7 +11,7 @@ import {CarritoService} from "../../services/carrito.service";
 })
 export class DetalleArticuloComponent {
 
-  articuloId: number | null = 0;
+  articuloCategoria: string | null = "";
   articulo: Articulo = new Articulo();
   cantidad: number = 1;
 
@@ -19,33 +19,19 @@ export class DetalleArticuloComponent {
     private route: ActivatedRoute,
     private articuloService: ArticuloService,
     private carritoService: CarritoService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('articulo');
-    this.articuloId = idParam ? parseInt(idParam, 10) : null;
+    this.articuloCategoria = this.route.snapshot.paramMap.get('articulo');
 
-    if (this.articuloId !== null) {
-      this.articuloService.MostrarArticuloPorId().subscribe(datos => {
-        const articuloEncontrado = datos.find(articulo  => articulo.iD_Articulo === this.articuloId);
-
-        if (articuloEncontrado) {
-          this.articulo = articuloEncontrado;
-        } else {
-          console.error('Artículo no encontrado');
-        }
-      });
-    } else {
-      console.error('ID de artículo inválido');
-    }
-
-    /!*this.articuloService.MostrarArticuloPorId().subscribe(datos => {
+    this.articuloService.MostrarArticuloPorId().subscribe(datos => {
       for (var a of datos) {
-        if (a['iD_Articulo'] == this.articuloId) {
+        if (a['categoria'] == this.articuloCategoria) {
           this.articulo = a;
         }
       }
-    });*!/
+    });
   }
 
   alCarrito(articulo: Articulo): void {
@@ -54,4 +40,4 @@ export class DetalleArticuloComponent {
     alert('Agregado al carrito!');
   }
 
-}*/
+}

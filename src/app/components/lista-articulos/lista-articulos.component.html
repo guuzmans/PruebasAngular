@@ -1,3 +1,18 @@
 <div class="articulos-container" fxLayout="row wrap" fwLayoutAlign="center">
-  <app-articulo fxFlexOffset="5%" class="articulo-index" *ngFor="let articulo of articulos" [articulo]="articulo" (agregar)="Agregar()"></app-articulo>
+  <app-articulo
+    *ngFor="let articulo of articulosPaginados"
+    fxFlexOffset="5%"
+    class="articulo-index"
+    [articulo]="articulo"
+    (agregar)="Agregar()">
+  </app-articulo>
 </div>
+<div class="paginacion" fxLayout="row" fxLayoutAlign="center">
+  <button
+    *ngFor="let pagina of ObtenerPaginas()"
+    (click)="CambiarPagina(pagina)"
+    [class.active]="pagina === paginaActual">
+    {{ pagina }}
+  </button>
+</div>
+
